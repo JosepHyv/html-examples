@@ -4,6 +4,7 @@
   "description": "dsw uv homework",
   "main": "index.js",
   "scripts": {
+    "dev" : "tailwindcss -i ./src/styles/input.css -o ./src/styles/myStyles.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
