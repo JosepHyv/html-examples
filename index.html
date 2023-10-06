@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplos Html</title>
+    <link href="./src/styles/myStyles.css" rel="stylesheet" />
+  </head>
+  <body class=" bg-slate-100 h-screen ">
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="flex flex-col  h-full">
+      <div class="flex-1">
+        <div class="m-10 h-36">
+            <h1 id="typewriter" class=" font-bold capitalize text-white  text-9xl"></h1>
+        </div>
+        <div class="m-10 p-10">
+          <p class="text-2xl text-white italic">
+            Esta es una investigacion interactiva, la investigacion se encuentra aqui <a class="font-bold text-3xl" href="./pages/index.html">invesigacion</a>
+            Si no quieres ver la investigacion. no hay problema, puedes probar los demos de aqui abajo :D
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-row justify-around m-10 rounded-lg shadow-lg bg-gray-600 bg-opacity-20 backdrop-blur-md">
+        <div class="flex flex-col justify-around ">
+          <div class="my-7">
+            <a href="pages/agrupacion.html">
+              <div class="border border-white border-opacity-20 rounded-lg p-20 shadow-md">
+                <h3 class="text-center capitalize text-white font-semibold">Agrupacion de contenido</h3>
+              </div>
+            </a>
+          </div>
+          <div class="my-7">
+            <a href="pages/incrustacion.html">
+              <div class="border border-white border-opacity-20 rounded-lg p-20 shadow-md">
+                <h3 class="text-center capitalize text-white font-semibold">Incrustar contenido</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="flex flex-col justify-around ">
+          <div class="my-7">
+            <a href="pages/tabulares.html">
+              <div class="border border-white border-opacity-20 rounded-lg p-20 shadow-md">
+                <h3 class="text-center capitalize text-white font-semibold">Mostrar datos tabulares</h3>
+              </div>
+            </a>
+          </div>
+          <div class="my-7">
+            <a href="pages/formularios.html">
+              <div class="border border-white border-opacity-20 rounded-lg p-20 shadow-md">
+                <h3 class="text-center capitalize text-white font-semibold">elementos para formularios</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <footer class="bg-gray-200 bg-opacity-30 rounded-lg shadow m-2 backdrop-blur-sm">
+        <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+          
+          <span class="block text-sm text-white font-bold sm:text-center"
+            >Joseph Hynimoto Aguilar Lopez©
+            <script type="text/javascript">
+              const fecha = new Date();
+              y = fecha.getFullYear();
+              m = fecha.getMonth() + 1;
+              d = fecha.getDate();
+              document.write(`${d}/${m}/${y}`);
+            </script>
+          </span>
+        </div>
+      </footer>
+    </div>
+
+  </body>
+</html>
+
+<script>
+    const words = ["Ejemplos de HTML", "Una tarea para DSW", "Totalmente interactivo"];
+    let i = 0;
+    let j = 0;
+    let currentWord = "";
+    let isDeleting = false;
+    
+    const type = () => {
+      currentWord = words[i];
+      if (isDeleting) {
+        document.getElementById("typewriter").textContent = currentWord.substring(0, j-1);
+        j--;
+        if (j == 0) {
+          isDeleting = false;
+          i++;
+          i = i % words.length;
+        }
+      } else {
+        document.getElementById("typewriter").textContent = currentWord.substring(0, j+1);
+        j++;
+        if (j == currentWord.length) {
+          isDeleting = true;
+        }
+      }
+      setTimeout(type, 200);
+    }
+    
+    type();
+    </script>
