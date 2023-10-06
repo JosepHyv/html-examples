@@ -1,7 +1,16 @@
 # html-examples
 html examples using tailwind because I like it for a homework of DSW
 
-- can run in develop using any http server and start tailwind process using 
+### Run dev mode 
+
+just install depencencies with `npm`, `bun`,`yarn` or the package manager of your choice 
+
+```bash
+npm i . 
+```
+
+can run in develop using any http server and start tailwind process using 
+
 ```bash
 npm run dev
 
